@@ -11,7 +11,7 @@
         if (!ctype_alpha($_POST['prenom'])) {
             echo ' Veuillez entrer un prenom correct';   
         }
-        elseif (isset($_POST['prenom']) && $_POST['prenom'] == true) {
+        elseif (isset($_POST['prenom'])) {
             echo 'Bonjour ' . htmlspecialchars($_POST['prenom']) ;
         
         }else {
@@ -20,7 +20,7 @@
         if (!ctype_alpha($_POST['nom'])) {
             echo ' veuillez entrer un nom correct';
         }
-        elseif (isset($_POST['nom']) && $_POST['nom'] == true ) {
+        elseif (isset($_POST['nom'])) {
             echo ' ' . htmlspecialchars($_POST['nom']);
         }else {
             echo  ' veuillez entrer votre nom';
@@ -46,19 +46,20 @@
          else {
              echo ' veuillez remplire la case';
          }
+        if (isset($_POST['loisirs'])) {
         if ($_POST['loisirs'] == 'boxe') {
             echo ' vous pratiqué la boxe';
+        }    
+        if ($_POST['loisirs'] == 'musculation') {
+           echo ' vous pratiqué la musculation';
         }
-        elseif ($_POST['loisirs'] == 'musculation') {
-            echo ' vous pratiqué la musculation';
-        }
-        elseif ($_POST['loisirs'] == 'basket') {
+        if ($_POST['loisirs'] == 'basket') {
              echo ' vous pratiqué le basket-ball';
          }
-        elseif ($_POST['loisirs'] == 'cinema') {
+        if ($_POST['loisirs'] == 'cinema') {
             echo ' vous etes fan de cinema';
         }
-       
+        } 
         else  {
             echo ' veuillez cocher une case';
         }
