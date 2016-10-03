@@ -8,7 +8,7 @@
     <body>
        
         
-            <form action="cible.php" method="post" >
+            <form action="cible.php" method="post" enctype="multipart/form-data" >
              <ul>
                   
               <li> <label for=""> Prenom : <input type="text" name="prenom"/> </label></li> <br />
@@ -30,7 +30,7 @@
                 
             </form>
                <li> <input type="file" name="fichier" id="" value="" /></li><br>
-                <li><input type="submit" id="" value="Envoyer le fichier" name="cible_fichier.php" /></li><br >
+                <li><input type="submit" id="" value="Envoyer le fichier"/></li><br >
              </ul>
             </form>
 

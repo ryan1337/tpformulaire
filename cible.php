@@ -59,14 +59,16 @@
 
         if (isset($_FILES['fichier']) && $_FILES['fichier']['error'] == 0) {
          if ($_FILES['fichier']['size'] <= 100000) {
-             $infosfichier = pathinfo($_FILES['fichier']['names']);
-             $extension_upload = $infofichier['extension'];
+             $infosfichier = pathinfo($_FILES['fichier']['name']);
+             $extension_upload = $infosfichier['extension'];
              $extension_autorisees = array('jpg', 'jpeg', 'gif', 'png');
              if (in_array($extension_upload, $extension_autorisees)) {
                  move_uploaded_file($_FILES['fichier']['tmp_name'], 'uploads/' . basename($_FILES['fichier']['name']));
-              echo 'L\' envoi a bien été effectué !';  
+              echo ' L\' envoi a bien été effectué !';  
              }
          }   
+        }else {
+            echo ' L\' envoi n\' a pas été effectué';
         }
 
         ?>
