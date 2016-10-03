@@ -8,13 +8,19 @@
     <body>
         
         <?php 
-
-        if (isset($_POST['prenom']) && $_POST['prenom'] == true) {
-            echo 'Bonjour ' . htmlspecialchars($_POST['prenom']);
+        if (!ctype_alpha($_POST['prenom'])) {
+            echo ' Veuillez entrer un prenom correct';   
+        }
+        elseif (isset($_POST['prenom']) && $_POST['prenom'] == true) {
+            echo 'Bonjour ' . htmlspecialchars($_POST['prenom']) ;
+        
         }else {
             echo ' veuillez entrer votre prenom';
         }
-        if (isset($_POST['nom']) && $_POST['nom'] == true ) {
+        if (!ctype_alpha($_POST['nom'])) {
+            echo ' veuillez entrer un nom correct';
+        }
+        elseif (isset($_POST['nom']) && $_POST['nom'] == true ) {
             echo ' ' . htmlspecialchars($_POST['nom']);
         }else {
             echo  ' veuillez entrer votre nom';
